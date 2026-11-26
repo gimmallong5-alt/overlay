@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>말롱 - 고정틀 · 짚톡 커미션</title><style>
+@import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap');
+@font-face{font-family:'Paperozi';src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-4Regular.woff2') format('woff2');font-weight:400;font-display:swap;}
+@font-face{font-family:'Paperozi';src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-6SemiBold.woff2') format('woff2');font-weight:600;font-display:swap;}
+@font-face{font-family:'Paperozi';src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-7Bold.woff2') format('woff2');font-weight:700;font-display:swap;}
+@font-face{font-family:'Griun';src:url('https://cdn.jsdelivr.net/gh/yoostarmeartmug-gif/artmug@main/memoment_kkukkukk/MemomentKkukkukk.ttf') format('truetype'),url('https://yoostarmeartmug-gif.github.io/artmug/memoment_kkukkukk/MemomentKkukkukk.ttf') format('truetype');font-display:swap;}
+
+:root{
+  --lav:#E9DFFF; --lav-mid:#CDBBFA; --lav-deep:#8E72D8; --lav-ink:#5B43A8;
+  --pink:#FFDDEE; --pink-deep:#F08CBB; --cream:#FFFBFE; --panel:#F6F0FF;
+  --ink:#3D3550; --sub:#8B83A0; --line:rgba(142,114,216,.22);
+  --shadow:0 20px 50px -22px rgba(142,114,216,.38); --max:960px;
+  --pink-mid:#F7B6D4; --bg1:#F1E8FF; --bg2:#FFF9FD;
+}
+*,*::before,*::after{box-sizing:border-box;}
+html,body{margin:0;padding:0;max-width:100%;overflow-x:hidden;}
+h1,h2,h3,h4,p{margin:0;}
+body{
+  font-family:'Griun','Paperozi','Gowun Dodum','Pretendard',-apple-system,sans-serif;
+  font-size:17px;color:var(--ink);line-height:1.85;word-break:keep-all;position:relative;
+  background:
+    radial-gradient(circle at 8% 12%,rgba(255,221,238,.55) 0,transparent 26%),
+    radial-gradient(circle at 92% 30%,rgba(205,187,250,.45) 0,transparent 30%),
+    radial-gradient(circle at 20% 85%,rgba(205,187,250,.35) 0,transparent 28%),
+    radial-gradient(circle at 85% 92%,rgba(255,221,238,.5) 0,transparent 26%),
+    linear-gradient(170deg,var(--bg1) 0%,var(--bg2) 100%);
+  background-attachment:fixed;background-repeat:no-repeat;
+}
+/* 떠다니는 장식 */
+.deco{position:fixed;pointer-events:none;z-index:0;color:var(--lav-mid);opacity:.6;font-size:22px;animation:floaty 6s ease-in-out infinite;}
+.deco.d1{top:9%;left:4%;}.deco.d2{top:22%;right:5%;color:var(--pink-mid);animation-delay:-2s;font-size:26px;}
+.deco.d3{top:62%;left:3%;color:var(--pink-mid);animation-delay:-4s;}.deco.d4{top:78%;right:4%;animation-delay:-1s;font-size:28px;}
+@keyframes floaty{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-14px) rotate(12deg)}}
+img,video,iframe{max-width:100%;display:block;}
+.page{max-width:var(--max);margin:0 auto;padding:36px 20px 70px;position:relative;z-index:1;}
+
+.section{
+  background:rgba(255,255,255,.72);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);
+  border:2px solid rgba(255,255,255,.85);border-radius:32px;padding:34px 34px;margin-bottom:24px;box-shadow:var(--shadow);
+  position:relative;
+}
+.section-head{display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:22px;}
+.section-title{font-family:'Griun','Paperozi',cursive;font-size:27px;font-weight:700;color:var(--lav-ink);}
+.section-head::before,.section-head::after{content:'♡';color:var(--pink-deep);font-size:20px;}
+.section-head::after{content:'♡';}
+.sub-h{font-family:'Griun','Paperozi',cursive;font-size:19px;font-weight:700;color:var(--lav-deep);margin:22px 0 12px;text-align:center;}
+.note{text-align:center;color:var(--sub);font-size:15px;line-height:1.8;margin-bottom:14px;}
+
+/* HERO */
+.hero{
+  position:relative;overflow:hidden;display:flex;align-items:center;gap:36px;
+  background:linear-gradient(135deg,rgba(233,223,255,.75),rgba(255,255,255,.7) 55%,rgba(255,221,238,.6));
+  border:2px solid rgba(255,255,255,.9);border-radius:38px;padding:52px 42px;margin-bottom:24px;box-shadow:var(--shadow);
+}
+.hero::before{content:'✿';position:absolute;right:26px;top:14px;font-size:44px;color:rgba(240,140,187,.35);}
+.hero::after{content:'★';position:absolute;left:-6px;bottom:-14px;font-size:70px;color:rgba(205,187,250,.35);}
+.hero-wrap{position:relative;flex:0 0 auto;z-index:1;}
+.hero-profile{display:block;width:160px;height:160px;border-radius:50%;object-fit:cover;border:5px solid #fff;box-shadow:0 0 0 3px var(--lav-mid),0 16px 30px -10px rgba(142,114,216,.5);background:linear-gradient(135deg,var(--lav),var(--pink));}
+.hero-ph{display:none;width:160px;height:160px;border-radius:50%;align-items:center;justify-content:center;font-family:'Griun','Paperozi',cursive;font-size:28px;color:#fff;background:linear-gradient(135deg,var(--lav-mid),var(--pink-deep));border:5px solid #fff;box-shadow:0 0 0 3px var(--lav-mid);}
+.hero-inner{position:relative;z-index:1;flex:1;min-width:0;}
+.hero-badge{display:inline-block;font-size:11.5px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;background:#fff;border:1.5px solid var(--lav-mid);color:var(--lav-deep);padding:6px 18px;border-radius:999px;margin-bottom:14px;}
+.hero h1{font-family:'Griun','Paperozi',cursive;font-size:clamp(26px,3.6vw,36px);font-weight:700;line-height:1.4;margin:0 0 12px;color:var(--lav-ink);}
+.hero p{font-size:16px;color:#6a6280;margin:0 0 18px;}
+.hero-tags{display:flex;gap:8px;flex-wrap:wrap;}
+.hero-tag{background:#fff;border:1.5px solid var(--lav-mid);padding:8px 16px;border-radius:999px;font-size:13.5px;font-weight:700;color:var(--lav-deep);line-height:1;transition:transform .25s cubic-bezier(.34,1.56,.64,1);}
+.hero-tag:nth-child(2n){border-color:var(--pink-mid);color:var(--pink-deep);}
+.hero-tag:hover{transform:scale(1.08) rotate(-2deg);}
+@media(max-width:560px){.hero{flex-direction:column;text-align:center;gap:18px;padding:40px 22px;}.hero-profile,.hero-ph{width:120px;height:120px;}.hero-tags{justify-content:center;}}
+
+/* 공지 */
+.banner{text-align:center;font-size:18px;font-weight:800;color:var(--lav-ink);background:linear-gradient(120deg,var(--lav),var(--pink));border-radius:20px;padding:15px 20px;margin-bottom:16px;line-height:1.8;}
+.cards{display:flex;flex-direction:column;gap:12px;}
+details.card{background:rgba(255,255,255,.85);border:1.5px solid var(--line);border-radius:20px;overflow:hidden;}
+details.card summary{cursor:pointer;list-style:none;position:relative;text-align:center;padding:13px 52px;font-size:15px;font-weight:800;color:var(--lav-deep);background:rgba(233,223,255,.55);}
+details.card summary::-webkit-details-marker{display:none;}
+details.card summary::after{content:'+';position:absolute;right:20px;top:50%;transform:translateY(-50%);font-size:22px;font-weight:900;transition:transform .25s;}
+details.card[open] summary::after{transform:translateY(-50%) rotate(45deg);}
+.card-body{padding:14px 20px;font-size:15px;text-align:center;}
+.line{margin-bottom:6px;}.line:last-child{margin-bottom:0;}
+
+/* 일정 */
+.sched{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;}
+.sc{background:rgba(255,255,255,.85);border:1.5px dashed var(--lav-mid);border-radius:22px;padding:18px 16px;text-align:center;}
+.sc b{display:inline-block;font-size:13px;color:#fff;background:var(--lav-deep);border-radius:999px;padding:3px 14px;margin-bottom:8px;}
+.sc:nth-child(2n) b{background:var(--pink-deep);}
+.sc div{font-size:16px;font-weight:700;line-height:1.7;}
+
+/* 샘플 */
+.tabs{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-bottom:18px;}
+.tab-btn{padding:9px 20px;border-radius:999px;border:1.5px solid var(--lav-mid);background:#fff;font-family:inherit;font-size:14px;font-weight:700;color:var(--sub);cursor:pointer;transition:transform .25s cubic-bezier(.34,1.56,.64,1);}
+.tab-btn:hover{transform:scale(1.06);}
+.tab-btn.active{background:linear-gradient(120deg,var(--lav-mid),#E3B9F0);color:#fff;border-color:transparent;box-shadow:0 8px 18px -6px rgba(142,114,216,.55);}
+.pn{display:none;}.pn.active{display:block;}
+.gallery{display:flex;flex-wrap:wrap;justify-content:center;gap:14px;}.gallery .gi{width:calc((100% - 28px)/3);}.gallery .gi:only-child{width:min(100%,460px);}.gallery .gi:first-child:nth-last-child(2),.gallery .gi:first-child:nth-last-child(2)~.gi,.gallery .gi:first-child:nth-last-child(4),.gallery .gi:first-child:nth-last-child(4)~.gi{width:calc((100% - 14px)/2);}
+@media(max-width:700px){.gallery{gap:10px;}.gallery .gi.gi.gi.gi.gi{width:calc((100% - 10px)/2);}.gallery .gi.gi.gi.gi.gi:only-child{width:100%;}}
+.gi{background:#fff;border-radius:20px;overflow:hidden;border:2px solid #fff;box-shadow:0 10px 24px -14px rgba(142,114,216,.5);cursor:zoom-in;transition:transform .25s ease;}
+.gi:hover{transform:translateY(-4px) rotate(-.6deg);}
+.gi .im{position:relative;height:0;padding-top:100%;background:#fff;overflow:hidden;}
+.gi .im img{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:contain;}
+.gi .cap{padding:8px 10px 10px;text-align:center;font-size:13.5px;color:var(--sub);line-height:1.5;}
+.gi .cap b{display:block;color:var(--lav-deep);font-size:14.5px;}
+.soon{display:flex;align-items:center;justify-content:center;min-height:160px;border-radius:22px;background:var(--panel);color:var(--sub);font-weight:700;border:2px dashed var(--lav-mid);}
+#lb{position:fixed;inset:0;background:rgba(61,53,80,.78);z-index:9999;display:none;align-items:center;justify-content:center;padding:20px;cursor:zoom-out;}
+#lb.on{display:flex;}#lb img{max-width:100%;max-height:92vh;border-radius:18px;}
+
+/* 순서 */
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;counter-reset:s;}
+.step{background:rgba(255,255,255,.85);border:1.5px solid var(--line);border-radius:22px;padding:16px 10px;text-align:center;position:relative;}
+.step b{display:block;font-size:11px;letter-spacing:.18em;color:var(--pink-deep);}
+.step strong{display:block;font-size:17px;margin:4px 0 2px;color:var(--lav-ink);}
+.step span{font-size:13px;color:var(--sub);display:block;line-height:1.6;}
+
+/* 가격 */
+.price-list{display:flex;flex-direction:column;gap:10px;max-width:640px;margin:0 auto;}
+.pr-row{background:rgba(255,255,255,.88);border:1.5px solid var(--line);border-radius:20px;padding:13px 20px;}
+.pr-top{display:flex;align-items:center;gap:10px;}
+.pr-top .nm{font-size:16px;font-weight:700;}
+.pr-top .dots{flex:1;border-bottom:2px dotted var(--lav-mid);transform:translateY(4px);}
+.pr-top .pc{font-weight:800;color:var(--lav-deep);font-size:17px;white-space:nowrap;}
+.pr-desc{font-size:13.5px;color:var(--sub);margin-top:2px;}
+
+/* 사용범위 */
+.use{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+@media(max-width:700px){.use{grid-template-columns:1fr;}}
+.use-box{border-radius:24px;padding:20px 22px;border:2px solid;}
+.use-box.ok{background:rgba(233,223,255,.55);border-color:var(--lav-mid);}
+.use-box.no{background:rgba(255,221,238,.5);border-color:var(--pink-mid);}
+.use-box h4{font-family:'Griun','Paperozi',cursive;font-size:19px;text-align:center;margin-bottom:10px;}
+.use-box.ok h4{color:var(--lav-deep);}.use-box.no h4{color:var(--pink-deep);}
+.use-box ul{margin:0;padding:0;list-style:none;font-size:15px;}
+.use-box li{padding:5px 0 5px 24px;position:relative;}
+.use-box.ok li::before{content:'○';position:absolute;left:0;color:var(--lav-deep);font-weight:900;}
+.use-box.no li::before{content:'✕';position:absolute;left:2px;color:var(--pink-deep);font-weight:900;}
+
+/* 신청양식 */
+.form-grid{display:flex;flex-direction:column;gap:18px;}
+.ff label.lb{display:block;font-size:16px;font-weight:800;margin-bottom:7px;color:var(--lav-ink);}
+.ff .hint{font-size:13px;color:var(--sub);font-weight:400;margin-left:6px;}
+.req{color:var(--pink-deep);margin-left:2px;}
+.inp{width:100%;padding:11px 15px;border-radius:16px;border:1.5px solid var(--lav-mid);background:rgba(255,255,255,.9);font-family:inherit;font-size:16px;color:var(--ink);}
+.inp:focus{outline:none;border-color:var(--lav-deep);box-shadow:0 0 0 4px rgba(142,114,216,.15);}
+textarea.inp{resize:vertical;min-height:84px;line-height:1.6;}
+.sel{display:flex;gap:8px;flex-wrap:wrap;}
+.sel button{padding:9px 18px;border-radius:999px;border:1.5px solid var(--lav-mid);background:#fff;font-family:inherit;font-size:14px;font-weight:700;color:var(--sub);cursor:pointer;transition:transform .25s cubic-bezier(.34,1.56,.64,1);}
+.sel button:hover{transform:scale(1.05);}
+.sel button.on{background:linear-gradient(120deg,var(--lav-mid),#E3B9F0);color:#fff;border-color:transparent;}
+.agree{display:flex;align-items:flex-start;gap:12px;background:rgba(255,221,238,.45);border:2px dashed var(--pink-mid);border-radius:20px;padding:16px 18px;cursor:pointer;margin-top:6px;}
+.agree input{position:absolute;opacity:0;pointer-events:none;}
+.agree .box{flex:0 0 26px;width:26px;height:26px;border-radius:9px;border:2.5px solid var(--pink-deep);background:#fff;display:flex;align-items:center;justify-content:center;color:#fff;font-size:16px;font-weight:900;margin-top:2px;}
+.agree.on .box{background:var(--pink-deep);}
+.agree.on .box::after{content:'✓';}
+.agree span.tx{font-size:15.5px;font-weight:700;color:var(--ink);line-height:1.7;}
+.btn-row{display:flex;gap:10px;margin-top:16px;flex-wrap:wrap;}
+.btn{flex:1;min-width:150px;padding:15px;border:none;border-radius:20px;font-family:inherit;font-size:17px;font-weight:800;cursor:pointer;transition:transform .15s,box-shadow .25s,background .25s;}
+.btn.main{background:#e6e1ee;color:#fff;cursor:not-allowed;}
+.btn.main.enabled{background:linear-gradient(120deg,var(--lav-deep),#C79AEF);cursor:pointer;box-shadow:0 10px 22px -8px rgba(142,114,216,.6);}
+.btn.main.enabled:hover{transform:scale(1.02);}
+.btn.sub{background:#fff;color:var(--lav-deep);border:2px solid var(--lav-mid);}
+.btn.sub:hover{background:var(--lav);}
+#preview{white-space:pre-wrap;background:rgba(255,255,255,.85);border:1.5px solid var(--line);border-radius:20px;padding:18px 22px;font-size:15px;margin-top:20px;line-height:1.9;display:none;}
+.toast{text-align:center;color:var(--pink-deep);font-weight:800;font-size:14px;min-height:22px;margin-top:10px;}
+.ask-wrap{margin:0 0 22px;}
+.ask-wrap .btn{width:100%;background:#fff;color:var(--lav-deep);border:2px solid var(--lav-mid);box-shadow:0 12px 26px -14px rgba(142,114,216,.5);}
+.ask-wrap .btn:hover{background:var(--lav);}
+@media(max-width:820px){.page{padding:26px 14px 56px;}.section{padding:26px 18px;border-radius:26px;}.hero{padding:34px 20px;}}
+.gi .im{height:auto;padding-top:0;}
+.gi .im img{position:static;height:auto;min-height:60px;}
+.gallery .gi.gi.gi.gi.gi.gi.wide{width:100%;}
+.gallery{align-items:flex-start;}
+</style></head><body>
+<span class="deco d1">✿</span><span class="deco d2">♡</span><span class="deco d3">★</span><span class="deco d4">✿</span>
+<div class="page">
+
+<header class="hero" id="hero"><div class="hero-wrap"><img class="hero-profile" data-g="프사.jpg" alt="말롱" onerror="this.style.display='none';document.getElementById('heroPh').style.display='flex'"><div class="hero-ph" id="heroPh">말롱</div></div>
+<div class="hero-inner"><span class="hero-badge">SD CHARACTER ILLUST</span><h1>말롱</h1><p>SD 전문 프리랜서 작가입니다.<br>귀엽고 사랑스러운 그림들을 그립니다 ♡</p><div class="hero-tags"><span class="hero-tag">SD</span><span class="hero-tag">두상 · 프로필 · 반신 · 전신</span><span class="hero-tag">셀채색</span><span class="hero-tag">접수중</span></div></div></header>
+
+<section class="section" id="notice"><div class="section-head"><div class="section-title">공지사항 · 유의사항</div></div>
+<div class="banner" id="banner">♡ 정확한 견적을 위해 반드시 문의 먼저 부탁드립니다! ♡</div>
+<div class="cards" id="noticeList">
+<details class="card" open><summary>공지사항</summary><div class="card-body"><div class="line">풀채색 타입도 현재 문의를 받고 있습니다.</div><div class="line">낙서 타입은 상시 가능합니다.</div><div class="line">낙서 타입은 선이 정돈되지 않는 점 참고해 주세요.</div></div></details>
+<details class="card" open><summary>유의사항</summary><div class="card-body"><div class="line">SD 타입 특성상 복잡한 디자인은 생략되거나 단순화될 수 있습니다.</div><div class="line">꼭 들어가야 하는 디자인 요소는 미리 알려주세요.</div><div class="line">신청자의 역량이 부족한 경우 신청서가 거절될 수 있습니다.</div><div class="line">연락처는 결제 후에 교환할 수 있습니다. 결제 전에는 문의 기능을 이용해 주세요.</div></div></details>
+</div></section>
+
+<section class="section" id="schedule"><div class="section-head"><div class="section-title">일정 안내</div></div>
+<div class="sched" id="schedList"><div class="sc"><b>접수</b><div>11월 23일부터 작업 예약 가능합니다</div></div><div class="sc"><b>작업 기간</b><div>결제일로부터 30일</div></div><div class="sc"><b>낙서 타입</b><div>상시 문의 가능</div></div></div></section>
+
+<section class="section" id="samples"><div class="section-head"><div class="section-title">작업 샘플</div></div><div class="soon">준비중입니다</div></section>
+
+<section class="section" id="process"><div class="section-head"><div class="section-title">작업 순서</div></div>
+<div class="steps"><div class="step"><b>STEP 01</b><strong>문의</strong></div><div class="step"><b>STEP 02</b><strong>주문</strong></div><div class="step"><b>STEP 03</b><strong>입금</strong></div><div class="step"><b>STEP 04</b><strong>작업</strong></div><div class="step"><b>STEP 05</b><strong>수령완료</strong></div></div></section>
+
+<section class="section" id="price"><div class="section-head"><div class="section-title">가격 안내</div></div>
+<div class="price-list"><div class="pr-row"><div class="pr-top"><span class="nm">낙서 타입</span><span class="dots"></span><span class="pc">7,000원</span></div><div class="pr-desc">SD 전신</div></div><div class="pr-row"><div class="pr-top"><span class="nm">풀채색 타입</span><span class="dots"></span><span class="pc">30,000원</span></div><div class="pr-desc">SD 전신</div></div><div class="pr-row"><div class="pr-top"><span class="nm">방송용 추가금 · 낙서 타입</span><span class="dots"></span><span class="pc">+20,000원</span></div></div><div class="pr-row"><div class="pr-top"><span class="nm">방송용 추가금 · 풀채색 타입</span><span class="dots"></span><span class="pc">기존 금액 ×2</span></div></div><div class="pr-row"><div class="pr-top"><span class="nm">배경 추가</span><span class="dots"></span><span class="pc">+10,000원</span></div><div class="pr-desc">문의 필수</div></div><div class="pr-row"><div class="pr-top"><span class="nm">소품 추가</span><span class="dots"></span><span class="pc">+5,000원</span></div><div class="pr-desc">문의 필수</div></div><div class="note" style="margin:6px 0 0">png · 72dpi · 기본 2000px · 수정 1회</div></div></section>
+
+<section class="section" id="usage"><div class="section-head"><div class="section-title">사용 범위</div></div>
+<div class="use"><div class="use-box ok"><h4>가능해요</h4><ul id="useOk"><li>신청하신 타입(비상업용 / 방송 · 상업용) 범위 안에서 사용</li><li>공개 게시 시 출처 표기</li></ul></div><div class="use-box no"><h4>불가능해요</h4><ul id="useNo"><li>신청한 타입과 다른 용도로 사용</li><li>무단 저장 · 캡처 · 트레이싱</li><li>AI 학습 사용</li></ul></div></div></section>
+
+<section class="section" id="form"><div class="section-head"><div class="section-title">신청 양식</div></div>
+<div class="note" id="formNote">견적·일정 확인 후 주문해 주세요. 아래 양식을 작성하고 복사해서 문의로 보내주세요 ♡</div>
+<div class="form-grid" id="formGrid"></div>
+<label class="agree" id="agree"><input type="checkbox" id="agreeCk"><span class="box"></span><span class="tx" id="agreeTx">모든 안내사항 및 유의사항을 확인했으며 이에 동의합니다.</span></label>
+<div class="btn-row"><button type="button" class="btn main" id="copyBtn">신청서 복사하기</button><button type="button" class="btn sub" id="resetBtn">처음부터 다시</button></div>
+<div class="toast" id="toast"></div><div id="preview"></div></section>
+
+<div class="ask-wrap"><button type="button" class="btn ask-btn">문의하기</button></div>
+</div>
+<div id="lb"><img alt=""></div>
+
+<script>
+/* ===== 설정 ===== */
+var CONFIG={qnaNumber:''};           /* 아트머그 작품번호 (문의하기 버튼용) */
+var IMG_BASE='이미지/';              /* 프사.jpg 등이 들어있는 폴더 */
+var SHEET_ID='';                     /* 구글시트 ID (시트 공유: 링크가 있는 모든 사용자 - 뷰어) */
+var SOON='준비중입니다';
+
+/* 기본 신청양식 (시트 '신청양식' 탭이 있으면 그걸로 대체됨) */
+var FORM=[
+ {n:'닉네임 / 연락처',t:'text',req:1,h:'트위터 ID 등'},
+ {n:'작업 타입',t:'select',o:['낙서 타입','풀채색 타입'],req:1},
+ {n:'작업 범위',t:'select',o:['두상','프로필','반신','전신'],req:1},
+ {n:'캐릭터 이름',t:'text',req:0},
+ {n:'캐릭터 설정 · 레퍼런스',t:'long',req:1,h:'참고 이미지 링크 가능'},
+ {n:'원하는 분위기 · 포즈',t:'long',req:0},
+ {n:'사용 용도',t:'select',o:['비상업용','방송 · 상업용'],req:1},
+ {n:'추가 옵션',t:'text',req:0,h:'배경 / 소품 등'},
+ {n:'희망 일정',t:'text',req:0},
+ {n:'기타 요청사항',t:'long',req:0}
+];
+var AGREE='모든 안내사항 및 유의사항을 확인했으며 이에 동의합니다.';
+var FV={};
+var T={copyTitle:'말롱 고정틀·짚톡 커미션 신청서',copyConfirm:'모든 안내사항/유의사항을 확인했으며 동의합니다 (확인)',needAgree:'안내사항 동의에 체크해 주세요 ♡',needReq:'필수 항목을 작성해 주세요',copied:'복사되었습니다! 문의로 보내주세요 ♡'};
+
+/* iframe 높이 전달 */
+(function(){function h(){var m=0;Array.prototype.forEach.call(document.body.children,function(c){var r=c.getBoundingClientRect();if(r.bottom>m)m=r.bottom;});return Math.ceil(m+window.pageYOffset);}
+function send(){window.parent.postMessage({type:'iframeResize',height:h()},'*');
+ var items=[];document.querySelectorAll('.page>.section').forEach(function(x){var t=x.querySelector('.section-title');if(t&&x.style.display!=='none')items.push([x.id,t.textContent]);});window.parent.postMessage({type:'amcmMenu',items:items},'*');}
+window.addEventListener('load',send);window.addEventListener('resize',send);document.addEventListener('DOMContentLoaded',send);
+if(window.ResizeObserver)new ResizeObserver(send).observe(document.body);setInterval(send,700);})();
+
+function esc(t){return String(t==null?'':t).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
+function nl(t){return esc(t).replace(/\r?\n/g,'<br>');}
+function $(id){return document.getElementById(id);}
+function imgSrc(u){u=String(u||'').trim();if(!u)return '';var m=u.match(/drive\.google\.com\/(?:file\/d\/|open\?id=|uc\?[^ ]*?id=|thumbnail\?id=)([\w-]+)/);if(m)return 'https://lh3.googleusercontent.com/d/'+m[1];if(/^(https?:)?\/\//.test(u)||u.indexOf('data:')===0)return u;return IMG_BASE+u.split('/').map(encodeURIComponent).join('/');}
+function setBody(id,html){var s=$(id),h=s.querySelector('.section-head');s.innerHTML='';s.appendChild(h);s.insertAdjacentHTML('beforeend',html);bind(s);}
+function setTitle(id,t){var e=$(id)&&$(id).querySelector('.section-title');if(e&&t&&t.trim())e.textContent=t.trim();}
+function groupRows(rows,k){var o=[],m={};rows.forEach(function(r){var g=(r[k]||'').trim();if(!g)return;if(!m[g]){m[g]=[];o.push(g);}m[g].push(r);});return {order:o,map:m};}
+function capHtml(c){c=String(c||'').trim();if(!c)return '';var p=c.split('|');return p.length>1?'<b>'+esc(p[0].trim())+'</b>'+esc(p.slice(1).join('|').trim()):esc(c);}
+
+/* 이미지 · 탭 · 확대 */
+function bind(root){
+  root.querySelectorAll('.gi img').forEach(function(i){function w(){if(i.naturalHeight&&i.naturalWidth/i.naturalHeight>1.8)i.closest('.gi').classList.add('wide');}i.addEventListener('load',w);if(i.complete)w();});
+  root.querySelectorAll('img[data-g]').forEach(function(i){i.src=imgSrc(i.dataset.g);});
+  root.querySelectorAll('.tab-btn').forEach(function(b){b.onclick=function(){var w=b.closest('.section');w.querySelectorAll('.tab-btn').forEach(function(x){x.classList.toggle('active',x===b);});w.querySelectorAll('.pn').forEach(function(p){p.classList.toggle('active',p.dataset.t===b.dataset.t);});};});
+  root.querySelectorAll('.gi').forEach(function(g){g.onclick=function(){var im=g.querySelector('img');if(!im)return;$('lb').querySelector('img').src=im.src;$('lb').classList.add('on');};});
+}
+$('lb').onclick=function(){this.classList.remove('on');};
+bind(document);
+
+/* ===== 신청양식 ===== */
+function renderForm(){
+  var g=$('formGrid'),h='';
+  FORM.forEach(function(f,i){
+    h+='<div class="ff"><label class="lb">'+esc(f.n)+(f.req?'<span class="req">*</span>':'')+(f.h?'<span class="hint">'+esc(f.h)+'</span>':'')+'</label>';
+    if(f.t==='select'){h+='<div class="sel" data-i="'+i+'">'+f.o.map(function(o){return '<button type="button" data-v="'+esc(o)+'"'+'>'+esc(o)+'</button>';}).join('')+'</div>';}
+    else if(f.t==='long'){h+='<textarea class="inp" data-i="'+i+'"></textarea>';}
+    else{h+='<input class="inp" type="text" data-i="'+i+'">';}
+    h+='</div>';});
+  g.innerHTML=h;FV={};
+  g.querySelectorAll('.inp').forEach(function(el){el.oninput=function(){FV[el.dataset.i]=el.value;upd();};});
+  g.querySelectorAll('.sel').forEach(function(s){s.querySelectorAll('button').forEach(function(b){b.onclick=function(){var on=b.classList.contains('on');s.querySelectorAll('button').forEach(function(x){x.classList.remove('on');});if(!on)b.classList.add('on');FV[s.dataset.i]=on?'':b.dataset.v;upd();};});});
+  $('agreeTx').textContent=AGREE;upd();
+}
+function missing(){var m=[];FORM.forEach(function(f,i){if(f.req&&!String(FV[i]||'').trim())m.push(f.n);});return m;}
+function upd(){var ok=$('agreeCk').checked&&!missing().length;$('copyBtn').classList.toggle('enabled',ok);$('agree').classList.toggle('on',$('agreeCk').checked);}
+function toast(t){$('toast').textContent=t;setTimeout(function(){$('toast').textContent='';},2500);}
+$('agree').onclick=function(e){e.preventDefault();$('agreeCk').checked=!$('agreeCk').checked;upd();};
+$('copyBtn').onclick=function(){
+  if(!$('agreeCk').checked){toast(T.needAgree);return;}
+  var m=missing();if(m.length){toast(T.needReq+': '+m[0]+(m.length>1?' 외 '+(m.length-1):''));return;}
+  var t='['+T.copyTitle+']\n'+FORM.map(function(f,i){return '▪ '+f.n+' : '+String(FV[i]||'').trim();}).join('\n')+'\n\n▪ '+T.copyConfirm;
+  var p=$('preview');p.style.display='block';p.textContent=t;
+  function ok(){toast(T.copied);}
+  if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(t).then(ok,function(){fb();});else fb();
+  function fb(){var a=document.createElement('textarea');a.value=t;document.body.appendChild(a);a.select();try{document.execCommand('copy');ok();}catch(e){toast('아래 내용을 직접 복사해 주세요');}a.remove();}
+};
+$('resetBtn').onclick=function(){$('agreeCk').checked=false;$('preview').style.display='none';renderForm();};
+
+/* 문의하기 / 리모콘 */
+document.addEventListener('click',function(e){if(e.target.closest&&e.target.closest('.ask-btn'))window.parent.postMessage({type:'artmugQna',number:CONFIG.qnaNumber},'*');});
+window.addEventListener('message',function(e){var d=e.data;if(!d||d.type!=='scrollToSection'||!d.id)return;var el=$(d.id);if(!el)return;window.parent.postMessage({type:'scrollToSection',top:Math.round(el.getBoundingClientRect().top+window.pageYOffset),offset:20},'*');});
+
+/* ===== 구글시트 연동 ===== */
+var _cb=0,_pending={};
+window.google=window.google||{};google.visualization=google.visualization||{};google.visualization.Query=google.visualization.Query||{};
+google.visualization.Query.setResponse=function(r){var f=_pending[r&&r.reqId];if(f)f(r);};
+function loadTab(name,headKey){return new Promise(function(resolve){
+  var id=String(_cb++),done=false,sc=document.createElement('script');
+  function finish(v){if(done)return;done=true;delete _pending[id];sc.remove();resolve(v);}
+  _pending[id]=function(r){if(!r||r.status!=='ok'||!r.table){finish(null);return;}
+    var rows=r.table.rows.map(function(row){return (row.c||[]).map(function(c){return c&&c.v!=null?String(c.f!=null?c.f:c.v):'';});});
+    rows=rows.filter(function(x){return x.some(function(y){return y.trim()!=='';});});
+    /* 첫 줄 제목이 맞지 않으면(탭이 없거나 빈 시트) 기본 내용을 그대로 둠 */
+    if(!rows.length||(rows[0][0]||'').trim().indexOf(headKey)!==0){finish(null);return;}
+    finish(rows.slice(1));};
+  sc.onerror=function(){finish(null);};setTimeout(function(){finish(null);},8000);
+  sc.src='https://docs.google.com/spreadsheets/d/'+SHEET_ID+'/gviz/tq?tqx=out:json;reqId:'+id+'&headers=0&sheet='+encodeURIComponent(name)+'&_='+Date.now();
+  document.head.appendChild(sc);});}
+
+function applyBasic(rows){var m={};rows.forEach(function(r){var k=(r[0]||'').trim();if(k)m[k]=(r[1]||'');});var hero=$('hero');
+  function has(k){return m[k]!==undefined;}
+  function filled(k){return has(k)&&m[k].trim()!=='';}
+  /* 칸을 비우면 해당 요소를 숨김 */
+  function put(el,k){if(!el||!has(k))return;el.innerHTML=nl(m[k]);el.style.display=filled(k)?'':'none';}
+  if(filled('브라우저제목'))document.title=m['브라우저제목'];
+  if(filled('이름')){hero.querySelector('h1').textContent=m['이름'];$('heroPh').textContent=m['이름'];}
+  put(hero.querySelector('.hero-badge'),'뱃지');
+  put(hero.querySelector('p'),'소개');
+  if(has('프사')){var w=hero.querySelector('.hero-wrap'),im=hero.querySelector('.hero-profile');w.style.display='';if(filled('프사')){$('heroPh').style.display='none';im.style.display='block';im.src=imgSrc(m['프사']);}else{w.style.display='none';}}
+  if(has('태그1')){var tags=[];for(var i=1;i<=30;i++){if(filled('태그'+i))tags.push(m['태그'+i].trim());}
+    hero.querySelector('.hero-tags').innerHTML=tags.map(function(t){return '<span class="hero-tag">'+esc(t)+'</span>';}).join('');}
+  if(filled('준비중문구'))SOON=m['준비중문구'];
+  if(filled('문의번호'))CONFIG.qnaNumber=m['문의번호'].trim();
+  document.querySelectorAll('.ask-btn').forEach(function(b){if(has('문의버튼')){b.textContent=m['문의버튼'];b.parentNode.style.display=filled('문의버튼')?'':'none';}});
+  put($('formNote'),'신청양식안내');
+  if(filled('동의문구')){AGREE=m['동의문구'];$('agreeTx').textContent=AGREE;}
+  if(filled('복사버튼'))$('copyBtn').textContent=m['복사버튼'];
+  if(filled('초기화버튼'))$('resetBtn').textContent=m['초기화버튼'];
+  [['신청서제목','copyTitle'],['신청서확인문구','copyConfirm'],['동의안내','needAgree'],['필수안내','needReq'],['복사완료','copied']].forEach(function(a){if(filled(a[0]))T[a[1]]=m[a[0]];});
+  if(filled('가능제목'))$('useOk').parentNode.querySelector('h4').textContent=m['가능제목'];
+  if(filled('불가능제목'))$('useNo').parentNode.querySelector('h4').textContent=m['불가능제목'];
+  /* 색상 */
+  var root=document.documentElement.style;
+  [['색_연한보라','--lav'],['색_보라','--lav-mid'],['색_진한보라','--lav-deep'],['색_글자보라','--lav-ink'],['색_연분홍','--pink'],['색_분홍','--pink-mid'],['색_진한분홍','--pink-deep'],['색_글자','--ink'],['색_배경위','--bg1'],['색_배경아래','--bg2']].forEach(function(a){if(filled(a[0]))root.setProperty(a[1],m[a[0]].trim());});
+  if(has('장식')){var ch=Array.from(m['장식'].replace(/\s/g,''));document.querySelectorAll('.deco').forEach(function(d,i){d.textContent=ch.length?ch[i%ch.length]:'';});}
+  /* 섹션 제목 */
+  Object.keys(SEC).forEach(function(n){setTitle(SEC[n],m['제목'+n]);});
+  /* 섹션 순서 / 숨김: 적은 순서대로 보이고, 빠진 항목은 숨김 */
+  if(filled('섹션순서')){var page=document.querySelector('.page'),ask=document.querySelector('.ask-wrap'),used={};
+    m['섹션순서'].split(/[,，\n>]/).forEach(function(n){var id=SEC[n.replace(/\s/g,'')];if(id&&!used[id]){used[id]=1;page.insertBefore($(id),ask);}});
+    if(Object.keys(used).length)Object.keys(SEC).forEach(function(n){if(!used[SEC[n]])$(SEC[n]).style.display='none';});}}
+var SEC={'공지':'notice','일정':'schedule','샘플':'samples','작업순서':'process','가격':'price','사용범위':'usage','신청양식':'form'};
+
+/* 공지: 제목 | 내용   (제목이 '강조' 이면 맨 위 띠 배너) */
+function applyNotice(rows){var bn=rows.filter(function(r){return (r[0]||'').trim()==='강조'&&(r[1]||'').trim();});$('banner').style.display=bn.length?'':'none';if(bn.length)$('banner').innerHTML=bn.map(function(r){return nl(r[1]);}).join('<br>');
+  var cards=rows.filter(function(r){return (r[0]||'').trim()!=='강조';});
+  $('noticeList').innerHTML=cards.map(function(r){var ls=String(r[1]||'').split(/\n/).filter(function(l){return l.trim();});
+    return '<details class="card" open><summary>'+esc(r[0])+'</summary><div class="card-body">'+ls.map(function(l){return '<div class="line">'+esc(l)+'</div>';}).join('')+'</div></details>';}).join('');}
+
+/* 일정: 라벨 | 내용 */
+function applySched(rows){$('schedList').innerHTML=rows.map(function(r){return '<div class="sc"><b>'+esc(r[0])+'</b><div>'+nl(r[1])+'</div></div>';}).join('');}
+
+/* 샘플: 구분(탭) | 이미지링크 | 캡션(제목|내용) | 탭설명 */
+function applySamples(rows){var g=groupRows(rows,0);if(!g.order.length)return;
+  var names=g.order,html='<div class="tabs">'+names.map(function(n,i){return '<button type="button" class="tab-btn'+(i?'':' active')+'" data-t="'+i+'">'+esc(n)+'</button>';}).join('')+'</div>';
+  html+=names.map(function(k,i){var rs=g.map[k],desc=rs.map(function(r){return (r[3]||'').trim();}).filter(Boolean)[0]||'';
+    var items=rs.filter(function(r){return (r[1]||'').trim();}).map(function(r){return '<div class="gi"><div class="im"><img data-g="'+esc(r[1])+'" alt="" loading="lazy"></div>'+(r[2]?'<div class="cap">'+capHtml(r[2])+'</div>':'')+'</div>';}).join('');
+    return '<div class="pn'+(i?'':' active')+'" data-t="'+i+'">'+(desc?'<div class="note">'+nl(desc)+'</div>':'')+(items?'<div class="gallery">'+items+'</div>':'<div class="soon">'+esc(SOON)+'</div>')+'</div>';}).join('');
+  setBody('samples',html);}
+
+/* 작업순서: 순서 | 제목 | 설명 */
+function applyProcess(rows){var rs=rows.filter(function(r){return (r[1]||'').trim();});if(!rs.length)return;
+  setBody('process','<div class="steps">'+rs.map(function(r,i){return '<div class="step"><b>STEP '+(i<9?'0':'')+(i+1)+'</b><strong>'+esc(r[1])+'</strong>'+(r[2]?'<span>'+nl(r[2])+'</span>':'')+'</div>';}).join('')+'</div>');}
+
+/* 가격: 항목 | 가격 | 설명 */
+function applyPrice(rows){if(!rows.length)return;
+  setBody('price','<div class="price-list">'+rows.map(function(r){return '<div class="pr-row"><div class="pr-top"><span class="nm">'+esc(r[0])+'</span><span class="dots"></span><span class="pc">'+esc(r[1])+'</span></div>'+(r[2]?'<div class="pr-desc">'+nl(r[2])+'</div>':'')+'</div>';}).join('')+'</div>');}
+
+/* 사용범위: 구분(가능/불가능) | 내용 */
+function applyUsage(rows){var ok=rows.filter(function(r){return /가능$/.test((r[0]||'').trim())&&!/불/.test(r[0]);}),no=rows.filter(function(r){return /불|금지|X/.test(r[0]||'');});
+  if(!ok.length&&!no.length)return;
+  function li(a){return a.map(function(r){return '<li>'+esc(r[1])+'</li>';}).join('');}
+  $('useOk').innerHTML=li(ok);$('useNo').innerHTML=li(no);}
+
+/* 신청양식: 항목 | 종류(짧은글/긴글/선택) | 선택지(쉼표) | 필수(O) | 안내 */
+function applyForm(rows){var f=rows.filter(function(r){return (r[0]||'').trim();}).map(function(r){var k=(r[1]||'').trim(),t=/선택/.test(k)?'select':(/긴/.test(k)?'long':'text');
+  return {n:r[0].trim(),t:t,o:String(r[2]||'').split(/[,，\n]/).map(function(x){return x.trim();}).filter(Boolean),req:/^(O|o|○|필수|Y|y|1)/.test((r[3]||'').trim())?1:0,h:(r[4]||'').trim()};});
+  f.forEach(function(x){if(x.t==='select'&&!x.o.length)x.t='text';});
+  if(f.length)FORM=f;renderForm();}
+
+var D={"기본정보": [["브라우저제목", "말롱 - 고정틀 · 짚톡 커미션"], ["이름", "말롱"], ["뱃지", "OVERLAY · ZEPTALK"], ["소개", "방송용 고정틀과 짚톡을 작업합니다.\n귀엽고 사랑스럽게 만들어 드려요 ♡"], ["프사", "프사.jpg"], ["태그1", "고정틀"], ["태그2", "짚톡"], ["태그3", "방송"], ["태그4", "접수중"], ["태그5", ""], ["태그6", ""], ["섹션순서", "공지,일정,샘플,작업순서,가격,사용범위,신청양식"], ["제목공지", "공지사항 · 유의사항"], ["제목일정", "일정 안내"], ["제목샘플", "작업 샘플"], ["제목작업순서", "작업 순서"], ["제목가격", "가격 안내"], ["제목사용범위", "사용 범위"], ["제목신청양식", "신청 양식"], ["가능제목", "가능해요"], ["불가능제목", "불가능해요"], ["신청양식안내", "견적·일정 확인 후 주문해 주세요. 아래 양식을 작성하고 복사해서 문의로 보내주세요 ♡"], ["동의문구", "모든 안내사항 및 유의사항을 확인했으며 이에 동의합니다."], ["복사버튼", "신청서 복사하기"], ["초기화버튼", "처음부터 다시"], ["신청서제목", "말롱 고정틀·짚톡 커미션 신청서"], ["신청서확인문구", "모든 안내사항/유의사항을 확인했으며 동의합니다 (확인)"], ["동의안내", "안내사항 동의에 체크해 주세요 ♡"], ["필수안내", "필수 항목을 작성해 주세요"], ["복사완료", "복사되었습니다! 문의로 보내주세요 ♡"], ["문의버튼", "문의하기"], ["문의번호", ""], ["준비중문구", "준비중입니다"], ["장식", "✿♡★✿"], ["색_연한보라", "#E9DFFF"], ["색_보라", "#CDBBFA"], ["색_진한보라", "#8E72D8"], ["색_글자보라", "#5B43A8"], ["색_연분홍", "#FFDDEE"], ["색_분홍", "#F7B6D4"], ["색_진한분홍", "#F08CBB"], ["색_글자", "#3D3550"], ["색_배경위", "#F1E8FF"], ["색_배경아래", "#FFF9FD"]], "공지": [["강조", "♡ 정확한 견적을 위해 반드시 문의 먼저 부탁드립니다! ♡"], ["공지사항", "공지사항을 시트에서 입력해 주세요."], ["유의사항", "모든 그림의 저작권은 작가에게 있습니다.\n공개 게시 시 출처를 표기해 주세요."]], "일정": [["접수", "접수 일정을 시트에서 입력해 주세요"], ["작업 기간", "작업 기간을 시트에서 입력해 주세요"]], "샘플": [["고정틀", "", "", ""], ["고정틀", "", "", ""], ["짚톡", "", "", ""], ["짚톡", "", "", ""]], "작업순서": [["순서", "문의", ""], ["순서", "주문", ""], ["순서", "입금", ""], ["순서", "작업", ""], ["순서", "수령완료", ""]], "가격": [["고정틀", "00,000원", ""], ["짚톡", "00,000원", ""]], "사용범위": [["가능", "신청하신 용도 범위 안에서 사용"], ["가능", "공개 게시 시 출처 표기"], ["불가능", "신청한 용도와 다른 목적으로 사용"], ["불가능", "무단 저장 · 캡처 · 트레이싱"], ["불가능", "AI 학습 사용"]], "신청양식": [["닉네임 / 연락처", "짧은글", "", "O", "트위터 ID 등"], ["작업 종류", "선택", "고정틀,짚톡", "O", ""], ["방송 플랫폼", "짧은글", "", "", ""], ["들어갈 캐릭터 · 소재", "긴글", "", "O", ""], ["원하는 색감 · 분위기", "긴글", "", "", ""], ["레퍼런스", "긴글", "", "", "참고 이미지 링크 가능"], ["사용 용도", "선택", "비상업용,방송 · 상업용", "O", ""], ["희망 일정", "짧은글", "", "", ""], ["기타 요청사항", "긴글", "", "", ""]]};
+applyBasic(D['기본정보']);applyNotice(D['공지']);applySched(D['일정']);applySamples(D['샘플']);applyProcess(D['작업순서']);applyPrice(D['가격']);applyUsage(D['사용범위']);applyForm(D['신청양식']);
+if(SHEET_ID){
+  loadTab('기본정보','항목').then(function(r){if(r&&r.length)applyBasic(r);
+    [['공지','제목',applyNotice],['일정','라벨',applySched],['샘플','구분',applySamples],['작업순서','순서',applyProcess],['가격','항목',applyPrice],['사용범위','구분',applyUsage],['신청양식','항목',applyForm]].forEach(function(a){
+      loadTab(a[0],a[1]).then(function(rows){if(rows===null)return;if(!rows.length){$(SEC[a[0]]).style.display='none';return;}a[2](rows);});});});
+}
+</script></body></html>
